@@ -27,6 +27,9 @@ import {
   ExternalLink,
   BarChart3,
   ShoppingCart,
+  Coffee,
+  Rocket,
+  Eye,
 } from "lucide-react";
 import { Link } from "react-router";
 import SpaceBackground from "@/components/SpaceBackground";
@@ -701,55 +704,110 @@ function Community() {
 }
 
 /* ────────────────────────────────────────────
-   Upload / Creator CTA
+   What's Next — glimpse + stay tuned
    ──────────────────────────────────────────── */
 
-function CreatorCTA() {
+function WhatNext() {
   return (
     <section className="relative z-20 bg-[#080808] py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-[#2A2A2A]/80 bg-[#111111]/80">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7C5CFC]/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/5 via-transparent to-[#7C5CFC]/5" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/3 via-transparent to-[#00D4AA]/3" />
 
-            <div className="relative px-8 sm:px-14 py-14 sm:py-20 flex flex-col sm:flex-row items-center gap-10">
-              <div className="flex-1">
-                <p className="font-[JetBrains_Mono] text-[11px] font-medium text-[#7C5CFC]/80 tracking-widest uppercase mb-4">
-                  For creators
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                  Build themes. Share them.
-                  <br />
-                  <span className="text-white/40">Grow your audience.</span>
-                </h2>
-                <p className="mt-4 text-sm text-white/35 leading-relaxed max-w-md">
-                  ChibiDesk gives creators a marketplace to publish widgets, characters, and wallpapers. Set your own price, track downloads, and manage everything from a single dashboard.
-                </p>
-                <div className="mt-6 flex items-center gap-6 text-[11px] font-[JetBrains_Mono] text-white/25">
-                  <span className="flex items-center gap-1.5">
-                    <BarChart3 className="h-3 w-3 text-[#FF6B00]/50" />
-                    Analytics dashboard
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <TrendingUp className="h-3 w-3 text-[#00D4AA]/50" />
-                    Revenue tracking
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Users className="h-3 w-3 text-[#7C5CFC]/50" />
-                    Audience insights
-                  </span>
+            <div className="relative px-8 sm:px-14 py-14 sm:py-20">
+              <div className="flex flex-col sm:flex-row items-start gap-10">
+                {/* Left — text */}
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#FF6B00]/15 bg-[#FF6B00]/5 px-3 py-1 mb-5">
+                    <Rocket className="h-3 w-3 text-[#FF6B00]/70" />
+                    <span className="font-[JetBrains_Mono] text-[10px] font-medium text-[#FF6B00]/70 tracking-wide">
+                      In development
+                    </span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
+                    Something big is
+                    <br />
+                    <span className="text-white/40">on the way.</span>
+                  </h2>
+                  <p className="mt-4 text-sm text-white/35 leading-relaxed max-w-md">
+                    Our team is hard at work on the next major update to ChibiDesk. We are not ready to share all the details yet, but here is a small glimpse of what is coming.
+                  </p>
+                  <p className="mt-4 text-sm text-[#FF6B00]/60 font-medium">
+                    Stay tuned for even crazier features.
+                  </p>
+                </div>
+
+                {/* Right — sneak peek card */}
+                <div className="shrink-0 w-full sm:w-72">
+                  <div className="rounded-xl border border-[#2A2A2A]/60 bg-[#0F0F0F]/80 p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Eye className="h-3.5 w-3.5 text-[#FF6B00]/50" />
+                      <span className="font-[JetBrains_Mono] text-[10px] text-white/30 tracking-wide uppercase">
+                        Sneak peek
+                      </span>
+                    </div>
+                    {/* Blurred preview placeholder */}
+                    <div className="rounded-lg bg-[#1A1A1A] border border-[#2A2A2A]/40 h-32 flex items-center justify-center overflow-hidden relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/5 to-[#00D4AA]/5" />
+                      <div className="relative text-center">
+                        <p className="font-[JetBrains_Mono] text-[10px] text-white/15 tracking-wider uppercase blur-[1px] select-none">
+                          v2.0
+                        </p>
+                        <p className="font-[JetBrains_Mono] text-[8px] text-white/10 mt-1 blur-[2px] select-none">
+                          coming soon
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-[11px] text-white/20 leading-relaxed">
+                      A completely new way to interact with your desktop.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="shrink-0">
-                <Link
-                  to="/auth"
-                  className="inline-flex items-center gap-2.5 rounded-xl bg-[#FF6B00] px-7 py-3.5 text-sm font-semibold text-black hover:bg-[#FF8533] transition-all hover:shadow-[0_0_40px_rgba(255,107,0,0.25)]"
-                >
-                  Start creating
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────────────────────────
+   Support the Developer
+   ──────────────────────────────────────────── */
+
+function SupportDev() {
+  return (
+    <section className="relative z-20 bg-[#0A0A0A] py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <FadeIn>
+          <div className="text-center">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FF6B00]/8 border border-[#FF6B00]/15 mb-5">
+              <Coffee className="h-5 w-5 text-[#FF6B00]" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+              Support the developer
+            </h2>
+            <p className="mt-3 text-sm text-white/30 max-w-md mx-auto leading-relaxed">
+              ChibiDesk is built by a small independent team. If you enjoy the app and want to support continued development, a coffee goes a long way.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#2A2A2A] bg-[#141414]/60 px-5 py-2.5 text-xs font-medium text-white/50 hover:text-white/70 hover:border-[#3A3A3A] transition-all"
+              >
+                <Coffee className="h-3.5 w-3.5" />
+                Buy me a coffee
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#2A2A2A] bg-[#141414]/60 px-5 py-2.5 text-xs font-medium text-white/50 hover:text-white/70 hover:border-[#3A3A3A] transition-all"
+              >
+                <Star className="h-3.5 w-3.5" />
+                Leave a review
+              </a>
             </div>
           </div>
         </FadeIn>
@@ -913,8 +971,9 @@ export default function Landing() {
         <Features />
         <CatalogPreview />
         <Community />
-        <CreatorCTA />
+        <WhatNext />
         <DownloadSection />
+        <SupportDev />
       </main>
       <Footer />
     </div>
