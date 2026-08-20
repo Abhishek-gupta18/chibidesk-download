@@ -180,8 +180,8 @@ function Nav() {
     >
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF6B00]/10 border border-[#FF6B00]/20 group-hover:bg-[#FF6B00]/15 transition-colors">
-            <span className="font-[JetBrains_Mono] text-sm font-bold text-[#FF6B00]">
+          <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-[#5865F2]/10 border border-[#5865F2]/20 group-hover:bg-[#5865F2]/15 transition-colors">
+            <span className="font-[JetBrains_Mono] text-sm font-bold text-[#5865F2]">
               C
             </span>
           </div>
@@ -211,7 +211,7 @@ function Nav() {
           </a>
           <a
             href="#download"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#FF6B00] px-4 py-2 text-xs font-semibold text-black hover:bg-[#FF8533] transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#5865F2] px-4 py-2 text-xs font-semibold text-black hover:bg-[#7B8EF8] transition-colors"
           >
             <Download className="h-3.5 w-3.5" />
             Get ChibiDesk
@@ -251,8 +251,8 @@ function Hero() {
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#2A2A2A] bg-[#181818]/80 px-4 py-1.5 backdrop-blur-sm"
         >
           <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF6B00] opacity-75" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#FF6B00]" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#5865F2] opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#5865F2]" />
           </span>
           <span className="font-[JetBrains_Mono] text-[11px] font-medium text-white/60 tracking-wide">
             v1.0 &middot; Windows 10/11 &middot; Free
@@ -268,9 +268,9 @@ function Hero() {
           Your desktop,
           <br />
           <span className="relative">
-            <span className="text-[#FF6B00]">your rules.</span>
+            <span className="text-[#5865F2]">your rules.</span>
             <motion.span
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-[#FF6B00]/30 rounded-full"
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-[#5865F2]/30 rounded-full"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -297,7 +297,7 @@ function Hero() {
         >
           <a
             href="#download"
-            className="group inline-flex items-center gap-2.5 rounded-xl bg-[#FF6B00] px-7 py-3.5 text-sm font-semibold text-black hover:bg-[#FF8533] transition-all duration-200 hover:shadow-[0_0_40px_rgba(255,107,0,0.3)]"
+            className="group inline-flex items-center gap-2.5 rounded-xl bg-[#5865F2] px-7 py-3.5 text-sm font-semibold text-black hover:bg-[#7B8EF8] transition-all duration-200 hover:shadow-[0_0_40px_rgba(88,101,242,0.3)]"
           >
             <Download className="h-4 w-4" />
             Download for Windows
@@ -341,8 +341,8 @@ function StatsRibbon() {
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 sm:grid-cols-4 gap-8">
         {stats.map((s, i) => (
           <FadeIn key={s.label} delay={i * 0.1} className="text-center">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF6B00]/8 border border-[#FF6B00]/10 mb-3">
-              <s.icon className="h-4 w-4 text-[#FF6B00]/60" />
+            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#5865F2]/8 border border-[#5865F2]/10 mb-3">
+              <s.icon className="h-4 w-4 text-[#5865F2]/60" />
             </div>
             <p className="text-2xl font-bold text-white/90 tracking-tight">
               {s.value}
@@ -366,7 +366,7 @@ const features = [
     icon: Sparkles,
     title: "Animated Widgets",
     desc: "Bring animated characters and visual elements directly onto your Windows desktop. Widgets react to your activity and time of day.",
-    color: "#FF6B00",
+    color: "#5865F2",
   },
   {
     icon: Zap,
@@ -390,7 +390,7 @@ const features = [
     icon: ShoppingCart,
     title: "Community Marketplace",
     desc: "Browse, buy, and share themes created by the community. Upload your own creations and earn.",
-    color: "#FF6B00",
+    color: "#5865F2",
   },
   {
     icon: MessageCircle,
@@ -405,7 +405,7 @@ function Features() {
     <section id="features" className="relative z-20 bg-[#0A0A0A] py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn className="text-center mb-20">
-          <p className="font-[JetBrains_Mono] text-[11px] font-medium text-[#FF6B00]/80 tracking-widest uppercase mb-4">
+          <p className="font-[JetBrains_Mono] text-[11px] font-medium text-[#5865F2]/80 tracking-widest uppercase mb-4">
             What it does
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
@@ -422,7 +422,7 @@ function Features() {
           {features.map((f, i) => (
             <FadeIn key={f.title} delay={i * 0.08}>
               <div
-                className="group relative rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 p-6 sm:p-7 hover:border-[#FF6B00]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
+                className="group relative rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 p-6 sm:p-7 hover:border-[#5865F2]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
                 style={{
                   transformStyle: "preserve-3d",
                   perspective: "800px",
@@ -505,7 +505,7 @@ function CatalogPreview() {
                 placeholder="Search themes, widgets, wallpapers..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full rounded-xl border border-[#2A2A2A] bg-[#141414]/80 pl-10 pr-4 py-3 text-sm text-white/80 placeholder:text-white/25 focus:outline-none focus:border-[#FF6B00]/30 transition-colors"
+                className="w-full rounded-xl border border-[#2A2A2A] bg-[#141414]/80 pl-10 pr-4 py-3 text-sm text-white/80 placeholder:text-white/25 focus:outline-none focus:border-[#5865F2]/30 transition-colors"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -515,7 +515,7 @@ function CatalogPreview() {
                   onClick={() => setActiveCategory(cat)}
                   className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                     activeCategory === cat
-                      ? "bg-[#FF6B00]/15 text-[#FF6B00] border border-[#FF6B00]/20"
+                      ? "bg-[#5865F2]/15 text-[#5865F2] border border-[#5865F2]/20"
                       : "text-white/40 hover:text-white/60 border border-transparent"
                   }`}
                 >
@@ -540,14 +540,14 @@ function CatalogPreview() {
               >
                 <Link
                   to={`/item/${item.id}`}
-                  className="group block rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 overflow-hidden hover:border-[#FF6B00]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
+                  className="group block rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 overflow-hidden hover:border-[#5865F2]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Color accent bar */}
                   <div
                     className="h-1 w-full"
                     style={{
-                      background: `linear-gradient(90deg, ${item.featured ? "#FF6B00" : "#333"}, transparent)`,
+                      background: `linear-gradient(90deg, ${item.featured ? "#5865F2" : "#333"}, transparent)`,
                     }}
                   />
                   <div className="p-5">
@@ -565,7 +565,7 @@ function CatalogPreview() {
                           Free
                         </span>
                       ) : (
-                        <span className="rounded-md bg-[#FF6B00]/10 border border-[#FF6B00]/20 px-2 py-0.5 text-[10px] font-[JetBrains_Mono] font-medium text-[#FF6B00]">
+                        <span className="rounded-md bg-[#5865F2]/10 border border-[#5865F2]/20 px-2 py-0.5 text-[10px] font-[JetBrains_Mono] font-medium text-[#5865F2]">
                           ${item.price}
                         </span>
                       )}
@@ -576,7 +576,7 @@ function CatalogPreview() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 text-[10px] text-white/25 font-[JetBrains_Mono]">
                         <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 text-[#FF6B00]/50" />
+                          <Star className="h-3 w-3 text-[#5865F2]/50" />
                           {item.rating}
                         </span>
                         <span className="flex items-center gap-1">
@@ -584,7 +584,7 @@ function CatalogPreview() {
                           {item.downloads.toLocaleString()}
                         </span>
                       </div>
-                      <ChevronRight className="h-3.5 w-3.5 text-white/15 group-hover:text-[#FF6B00]/40 transition-colors" />
+                      <ChevronRight className="h-3.5 w-3.5 text-white/15 group-hover:text-[#5865F2]/40 transition-colors" />
                     </div>
                   </div>
                 </Link>
@@ -663,7 +663,7 @@ function Community() {
                 Direct chat
               </span>
               <span className="flex items-center gap-1.5">
-                <Heart className="h-3 w-3 text-[#FF6B00]/50" />
+                <Heart className="h-3 w-3 text-[#5865F2]/50" />
                 Setup showcases
               </span>
             </div>
@@ -729,16 +729,16 @@ function WhatNext() {
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-[#2A2A2A]/80 bg-[#111111]/80">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/3 via-transparent to-[#00D4AA]/3" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#5865F2]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#5865F2]/3 via-transparent to-[#00D4AA]/3" />
 
             <div className="relative px-8 sm:px-14 py-14 sm:py-20">
               <div className="flex flex-col sm:flex-row items-start gap-10">
                 {/* Left — text */}
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#FF6B00]/15 bg-[#FF6B00]/5 px-3 py-1 mb-5">
-                    <Rocket className="h-3 w-3 text-[#FF6B00]/70" />
-                    <span className="font-[JetBrains_Mono] text-[10px] font-medium text-[#FF6B00]/70 tracking-wide">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#5865F2]/15 bg-[#5865F2]/5 px-3 py-1 mb-5">
+                    <Rocket className="h-3 w-3 text-[#5865F2]/70" />
+                    <span className="font-[JetBrains_Mono] text-[10px] font-medium text-[#5865F2]/70 tracking-wide">
                       In development
                     </span>
                   </div>
@@ -750,7 +750,7 @@ function WhatNext() {
                   <p className="mt-4 text-sm text-white/35 leading-relaxed max-w-md">
                     Our team is hard at work on the next major update to ChibiDesk. We are not ready to share all the details yet, but here is a small glimpse of what is coming.
                   </p>
-                  <p className="mt-4 text-sm text-[#FF6B00]/60 font-medium">
+                  <p className="mt-4 text-sm text-[#5865F2]/60 font-medium">
                     Stay tuned for even crazier features.
                   </p>
                 </div>
@@ -759,14 +759,14 @@ function WhatNext() {
                 <div className="shrink-0 w-full sm:w-72">
                   <div className="rounded-xl border border-[#2A2A2A]/60 bg-[#0F0F0F]/80 p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <Eye className="h-3.5 w-3.5 text-[#FF6B00]/50" />
+                      <Eye className="h-3.5 w-3.5 text-[#5865F2]/50" />
                       <span className="font-[JetBrains_Mono] text-[10px] text-white/30 tracking-wide uppercase">
                         Sneak peek
                       </span>
                     </div>
                     {/* Blurred preview placeholder */}
                     <div className="rounded-lg bg-[#1A1A1A] border border-[#2A2A2A]/40 h-32 flex items-center justify-center overflow-hidden relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/5 to-[#00D4AA]/5" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#5865F2]/5 to-[#00D4AA]/5" />
                       <div className="relative text-center">
                         <p className="font-[JetBrains_Mono] text-[10px] text-white/15 tracking-wider uppercase blur-[1px] select-none">
                           v2.0
@@ -800,8 +800,8 @@ function SupportDev() {
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="text-center">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FF6B00]/8 border border-[#FF6B00]/15 mb-5">
-              <Coffee className="h-5 w-5 text-[#FF6B00]" />
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#5865F2]/8 border border-[#5865F2]/15 mb-5">
+              <Coffee className="h-5 w-5 text-[#5865F2]" />
             </div>
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
               Support the developer
@@ -845,11 +845,11 @@ function DownloadSection() {
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-[#2A2A2A]/80 bg-[#111111]/80">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/30 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#5865F2]/30 to-transparent" />
 
             <div className="px-8 sm:px-14 py-14 sm:py-20 flex flex-col items-center text-center">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FF6B00]/8 border border-[#FF6B00]/15">
-                <Download className="h-6 w-6 text-[#FF6B00]" />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5865F2]/8 border border-[#5865F2]/15">
+                <Download className="h-6 w-6 text-[#5865F2]" />
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
@@ -862,7 +862,7 @@ function DownloadSection() {
               <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2.5 rounded-xl bg-[#FF6B00] px-8 py-3.5 text-sm font-semibold text-black hover:bg-[#FF8533] transition-all duration-200 hover:shadow-[0_0_40px_rgba(255,107,0,0.3)]"
+                  className="inline-flex items-center gap-2.5 rounded-xl bg-[#5865F2] px-8 py-3.5 text-sm font-semibold text-black hover:bg-[#7B8EF8] transition-all duration-200 hover:shadow-[0_0_40px_rgba(88,101,242,0.3)]"
                 >
                   <Download className="h-4 w-4" />
                   Download v1.0
@@ -902,8 +902,8 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#FF6B00]/10 border border-[#FF6B00]/20">
-                <span className="font-[JetBrains_Mono] text-xs font-bold text-[#FF6B00]">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#5865F2]/10 border border-[#5865F2]/20">
+                <span className="font-[JetBrains_Mono] text-xs font-bold text-[#5865F2]">
                   C
                 </span>
               </div>

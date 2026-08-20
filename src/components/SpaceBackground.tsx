@@ -53,8 +53,8 @@ export default function SpaceBackground() {
 
       // Subtle nebula glow
       const nebulaGrad = ctx.createRadialGradient(w * 0.5, h * 0.4, 0, w * 0.5, h * 0.4, w * 0.5);
-      nebulaGrad.addColorStop(0, "rgba(255, 107, 0, 0.03)");
-      nebulaGrad.addColorStop(0.4, "rgba(255, 107, 0, 0.01)");
+      nebulaGrad.addColorStop(0, "rgba(88, 101, 242, 0.03)");
+      nebulaGrad.addColorStop(0.4, "rgba(88, 101, 242, 0.01)");
       nebulaGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx.fillStyle = nebulaGrad;
       ctx.fillRect(0, 0, w, h);

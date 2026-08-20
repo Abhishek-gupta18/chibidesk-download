@@ -177,8 +177,8 @@ export default function Catalog() {
       <nav className="sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-[#2A2A2A]/60">
         <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF6B00]/10 border border-[#FF6B00]/20 group-hover:bg-[#FF6B00]/15 transition-colors">
-              <span className="font-[JetBrains_Mono] text-sm font-bold text-[#FF6B00]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5865F2]/10 border border-[#5865F2]/20 group-hover:bg-[#5865F2]/15 transition-colors">
+              <span className="font-[JetBrains_Mono] text-sm font-bold text-[#5865F2]">
                 C
               </span>
             </div>
@@ -199,7 +199,7 @@ export default function Catalog() {
       <main className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
         <div className="mb-10">
-          <p className="font-[JetBrains_Mono] text-[11px] font-medium text-[#FF6B00]/80 tracking-widest uppercase mb-3">
+          <p className="font-[JetBrains_Mono] text-[11px] font-medium text-[#5865F2]/80 tracking-widest uppercase mb-3">
             Marketplace
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
@@ -219,7 +219,7 @@ export default function Catalog() {
               placeholder="Search themes, widgets, wallpapers..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-[#2A2A2A] bg-[#141414]/80 pl-10 pr-4 py-3 text-sm text-white/80 placeholder:text-white/25 focus:outline-none focus:border-[#FF6B00]/30 transition-colors"
+              className="w-full rounded-xl border border-[#2A2A2A] bg-[#141414]/80 pl-10 pr-4 py-3 text-sm text-white/80 placeholder:text-white/25 focus:outline-none focus:border-[#5865F2]/30 transition-colors"
             />
           </div>
           <div className="flex items-center gap-2">
@@ -229,7 +229,7 @@ export default function Catalog() {
                 onClick={() => setActiveCategory(cat)}
                 className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-[#FF6B00]/15 text-[#FF6B00] border border-[#FF6B00]/20"
+                    ? "bg-[#5865F2]/15 text-[#5865F2] border border-[#5865F2]/20"
                     : "text-white/40 hover:text-white/60 border border-transparent"
                 }`}
               >
@@ -264,12 +264,12 @@ export default function Catalog() {
               >
                 <Link
                   to={`/item/${item.id}`}
-                  className="group block rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 overflow-hidden hover:border-[#FF6B00]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
+                  className="group block rounded-xl border border-[#2A2A2A]/80 bg-[#141414]/60 overflow-hidden hover:border-[#5865F2]/20 hover:bg-[#1A1A1A]/60 transition-all duration-300"
                 >
                   <div
                     className="h-1 w-full"
                     style={{
-                      background: `linear-gradient(90deg, ${item.featured ? "#FF6B00" : "#333"}, transparent)`,
+                      background: `linear-gradient(90deg, ${item.featured ? "#5865F2" : "#333"}, transparent)`,
                     }}
                   />
                   <div className="p-5">
@@ -287,7 +287,7 @@ export default function Catalog() {
                           Free
                         </span>
                       ) : (
-                        <span className="rounded-md bg-[#FF6B00]/10 border border-[#FF6B00]/20 px-2 py-0.5 text-[10px] font-[JetBrains_Mono] font-medium text-[#FF6B00]">
+                        <span className="rounded-md bg-[#5865F2]/10 border border-[#5865F2]/20 px-2 py-0.5 text-[10px] font-[JetBrains_Mono] font-medium text-[#5865F2]">
                           ${item.price}
                         </span>
                       )}
@@ -298,7 +298,7 @@ export default function Catalog() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 text-[10px] text-white/25 font-[JetBrains_Mono]">
                         <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 text-[#FF6B00]/50" />
+                          <Star className="h-3 w-3 text-[#5865F2]/50" />
                           {item.rating}
                         </span>
                         <span className="flex items-center gap-1">
@@ -306,7 +306,7 @@ export default function Catalog() {
                           {item.downloads.toLocaleString()}
                         </span>
                       </div>
-                      <ChevronRight className="h-3.5 w-3.5 text-white/15 group-hover:text-[#FF6B00]/40 transition-colors" />
+                      <ChevronRight className="h-3.5 w-3.5 text-white/15 group-hover:text-[#5865F2]/40 transition-colors" />
                     </div>
                   </div>
                 </Link>

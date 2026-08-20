@@ -29,7 +29,7 @@ export default function Dashboard() {
   };
 
   const stats = [
-    { icon: Package, label: "My uploads", value: "3", color: "#FF6B00" },
+    { icon: Package, label: "My uploads", value: "3", color: "#5865F2" },
     { icon: Download, label: "Total downloads", value: "1,247", color: "#00D4AA" },
     { icon: MessageCircle, label: "Comments", value: "18", color: "#7C5CFC" },
     { icon: TrendingUp, label: "Revenue", value: "$42.50", color: "#00B4D8" },
@@ -93,8 +93,8 @@ export default function Dashboard() {
             </CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button className="flex items-center gap-3 rounded-xl border border-[#2A2A2A]/60 bg-[#1A1A1A]/40 p-4 text-left hover:border-[#FF6B00]/20 hover:bg-[#1A1A1A]/60 transition-all">
-              <Upload className="h-4 w-4 text-[#FF6B00]/60" />
+            <button className="flex items-center gap-3 rounded-xl border border-[#2A2A2A]/60 bg-[#1A1A1A]/40 p-4 text-left hover:border-[#5865F2]/20 hover:bg-[#1A1A1A]/60 transition-all">
+              <Upload className="h-4 w-4 text-[#5865F2]/60" />
               <div>
                 <p className="text-xs font-semibold text-white/70">
                   Upload theme
