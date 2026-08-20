@@ -9,6 +9,17 @@ interface Star {
   speed: number;
 }
 
+interface ShootingStar {
+  x: number;
+  y: number;
+  length: number;
+  speed: number;
+  angle: number;
+  alpha: number;
+  active: boolean;
+  born: number;
+}
+
 export default function SpaceBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -21,6 +32,38 @@ export default function SpaceBackground() {
     let animId: number;
     let stars: Star[] = [];
     const STAR_COUNT = 200;
+
+    // ── Shooting stars ──
+    const SHOOTING_STAR_COUNT = 5;
+    const shootingStars: ShootingStar[] = [];
+    const SHOOT_INTERVAL = 3500; // ms between each shooting star launch
+
+    function resetShootingStar(ss: ShootingStar, time: number) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      ss.x = Math.random() * w * 0.7 + w * 0.15;
+      ss.y = Math.random() * h * 0.35;
+      ss.length = Math.random() * 80 + 40;
+      ss.speed = Math.random() * 4 + 3;
+      ss.angle = (Math.PI / 6) + Math.random() * (Math.PI / 8); // ~30-52° downward-right
+      ss.alpha = 1;
+      ss.active = true;
+      ss.born = time;
+    }
+
+    // Pre-seed with staggered birth times so they don't all fire at once
+    for (let i = 0; i < SHOOTING_STAR_COUNT; i++) {
+      shootingStars.push({
+        x: 0,
+        y: 0,
+        length: 60,
+        speed: 4,
+        angle: Math.PI / 5,
+        alpha: 0,
+        active: false,
+        born: i * SHOOT_INTERVAL + 500,
+      });
+    }
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -66,7 +109,7 @@ export default function SpaceBackground() {
       ctx.fillStyle = coolGrad;
       ctx.fillRect(0, 0, w, h);
 
-      // Draw stars
+      // Draw static stars
       const t = time * 0.001;
       for (const star of stars) {
         const twinkle = Math.sin(t * star.speed * 2 + star.x * 0.01) * 0.3 + 0.7;
@@ -77,13 +120,65 @@ export default function SpaceBackground() {
         ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
         ctx.fill();
 
-        // Subtle glow around brighter stars
         if (star.brightness > 0.6) {
           ctx.beginPath();
           ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.08})`;
           ctx.fill();
         }
+      }
+
+      // ── Shooting stars ──
+      for (const ss of shootingStars) {
+        // Launch if enough time has passed since last cycle
+        if (!ss.active && time - ss.born >= SHOOT_INTERVAL * SHOOTING_STAR_COUNT) {
+          resetShootingStar(ss, time);
+        }
+
+        if (!ss.active) continue;
+
+        // Move
+        ss.x += Math.cos(ss.angle) * ss.speed;
+        ss.y += Math.sin(ss.angle) * ss.speed;
+
+        // Fade out over ~600ms
+        const age = time - ss.born;
+        const fadeDuration = 600;
+        if (age > fadeDuration) {
+          ss.active = false;
+          ss.born = time;
+          continue;
+        }
+        ss.alpha = 1 - age / fadeDuration;
+
+        // Draw trail
+        const tailX = ss.x - Math.cos(ss.angle) * ss.length;
+        const tailY = ss.y - Math.sin(ss.angle) * ss.length;
+
+        const gradient = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
+        gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
+        gradient.addColorStop(0.7, `rgba(200, 210, 255, ${ss.alpha * 0.3})`);
+        gradient.addColorStop(1, `rgba(255, 255, 255, ${ss.alpha * 0.9})`);
+
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(ss.x, ss.y);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 1.5;
+        ctx.lineCap = "round";
+        ctx.stroke();
+
+        // Head glow
+        ctx.beginPath();
+        ctx.arc(ss.x, ss.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${ss.alpha})`;
+        ctx.fill();
+
+        // Outer glow
+        ctx.beginPath();
+        ctx.arc(ss.x, ss.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 200, 255, ${ss.alpha * 0.15})`;
+        ctx.fill();
       }
 
       animId = requestAnimationFrame(draw);
